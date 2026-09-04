@@ -2,42 +2,85 @@
 
 My personal **i3wm dotfiles** for a lightweight, minimal, and highly customized Linux desktop.
 
-Built around **i3wm**, with a collection of configs for my terminal, status bar, application launcher, compositor, music visualizer, and system information.
+Built around **i3wm**, with configurations for my window manager, status bar, application launcher, compositor, notifications, terminal, music visualizer, and system information.
 
 ## 📸 Preview
 
-![Desktop](rice2.png)
+![Desktop Preview](rice2.png)
 
 ## 🧩 What's Included
 
-| Component                                               | Purpose                      |
-| ------------------------------------------------------- | ---------------------------- |
-| [i3](https://i3wm.org/)                                 | Window manager               |
-| [Polybar](https://github.com/polybar/polybar)           | Status bar                   |
-| [Rofi](https://github.com/davatorium/rofi)              | Application launcher / menus |
-| [Picom](https://github.com/yshui/picom)                 | X11 compositor               |
-| [WezTerm](https://wezterm.org/)                         | Terminal emulator            |
-| [Fastfetch](https://github.com/fastfetch-cli/fastfetch) | System information           |
-| [Cava](https://github.com/karlstav/cava)                | Audio visualizer             |
+| Component     | Purpose                                  |
+| ------------- | ---------------------------------------- |
+| **i3wm**      | Window manager                           |
+| **Polybar**   | Status bar                               |
+| **Rofi**      | Application launcher, menus & power menu |
+| **Picom**     | X11 compositor                           |
+| **Dunst**     | Notification daemon                      |
+| **WezTerm**   | Terminal emulator                        |
+| **Fastfetch** | System information                       |
+| **Cava**      | Audio visualizer                         |
 
 ## 📁 Structure
 
 ```text
 .
-├── cava/        # Cava configuration
-├── fastfetch/   # Fastfetch configuration
-├── i3/          # i3wm configuration
-├── picom/       # Picom configuration
-├── polybar/     # Polybar configuration and scripts
-├── rofi/        # Rofi configuration and themes
-├── wezterm/     # WezTerm configuration
-├── 2326686.png  # Desktop screenshot
+├── cava/
+│   └── config
+│
+├── dunst/
+│   └── dunstrc
+│
+├── fastfetch/
+│   ├── config.jsonc
+│   └── logo2.png
+│
+├── i3/
+│   ├── config
+│   ├── tree_tiler.py
+│   └── scripts/
+│       └── powermenu
+│
+├── picom/
+│   └── picom.conf
+│
+├── polybar/
+│   ├── config.ini
+│   ├── launch.sh
+│   └── scripts/
+│       ├── network.sh
+│       └── wifi-menu.sh
+│
+├── rofi/
+│   ├── config.rasi
+│   ├── music.rasi
+│   ├── music.sh
+│   ├── powermenu/
+│   │   ├── type-1
+│   │   ├── type-2
+│   │   ├── type-3
+│   │   ├── type-4
+│   │   ├── type-5
+│   │   └── type-6
+│   ├── scripts/
+│   │   └── music.sh
+│   └── themes/
+│       ├── black-outline.rasi
+│       ├── black-outline.rasi.save
+│       ├── catpuccin.rasi
+│       └── papersky.rasi
+│
+├── wezterm/
+│   └── wezterm.lua
+│
+├── 2326686.png
+├── rice2.png
 └── README.md
 ```
 
 ## ⚙️ Setup
 
-These are **personal dotfiles**, so they aren't intended to be a universal installer.
+These are personal dotfiles, so they are not intended to be a universal installer.
 
 Clone the repository:
 
@@ -53,17 +96,38 @@ cp -r i3 ~/.config/
 cp -r polybar ~/.config/
 cp -r rofi ~/.config/
 cp -r cava ~/.config/
+cp -r dunst ~/.config/
 cp -r fastfetch ~/.config/
 cp -r wezterm ~/.config/
-```
-
-For Picom:
-
-```bash
 cp -r picom ~/.config/
 ```
 
 > **Tip:** Back up your existing configurations before replacing them.
+
+Some scripts may also need executable permissions:
+
+```bash
+chmod +x ~/.config/polybar/launch.sh
+chmod +x ~/.config/polybar/scripts/*.sh
+chmod +x ~/.config/i3/scripts/powermenu
+```
+
+## 🛠️ Requirements
+
+The setup uses:
+
+```text
+i3
+polybar
+rofi
+picom
+dunst
+wezterm
+fastfetch
+cava
+```
+
+Additional dependencies may be required by individual scripts or configurations depending on your system.
 
 ## 🎨 Philosophy
 
@@ -75,43 +139,27 @@ The setup is focused on keeping the desktop:
 * Keyboard-driven
 * Customizable
 
-Rather than using a full desktop environment, the configuration is built around **i3wm + lightweight utilities**.
-
-## 🛠️ Requirements
-
-At minimum, you'll need:
-
-```text
-i3
-polybar
-rofi
-picom
-wezterm
-fastfetch
-cava
-```
-
-Some scripts or individual configurations may require additional packages depending on how they are used.
+Instead of relying on a full desktop environment, the setup is built around **i3wm and lightweight utilities**.
 
 ## 📝 Notes
 
 These configurations reflect my personal setup and may require modification depending on your:
 
-* Distribution
+* Linux distribution
 * Hardware
 * Display resolution
 * Installed fonts
 * Audio setup
 * Preferred applications
 
-Don't blindly copy everything into `~/.config` — inspect and adapt the configs to your system.
+Don't blindly copy everything into `~/.config`. Inspect the configurations and adapt them to your system.
 
 ## ⭐ Credits
 
 Built and maintained by **rin1wav**.
 
-Inspired by the Linux ricing / dotfiles community.
+Inspired by the Linux ricing and dotfiles community.
 
 ---
 
-**If you find these configs useful, feel free to star the repository.**
+If you find these configs useful, feel free to ⭐ **star the repository**.
