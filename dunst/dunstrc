@@ -1,0 +1,90 @@
+
+# ~/.config/dunst/dunstrc
+
+[global]
+    monitor = 0
+
+    follow = mouse
+    width = 360
+    height = 120
+    origin = top-right
+    offset = 20x20
+
+    scale = 0
+
+    notification_limit = 5
+
+    progress_bar = true
+    progress_bar_height = 4
+    progress_bar_frame_width = 1
+
+    padding = 14
+    horizontal_padding = 14
+    text_icon_padding = 10
+
+    frame_width = 2
+    frame_color = "#4A90E2"
+
+    separator_height = 2
+    separator_color = "#4A90E2"
+
+    corner_radius = 0
+
+    transparency = 0
+
+    font = JetBrains Mono 10
+    line_height = 0
+
+    format = "<b>%s</b>\n%b"
+
+    markup = full
+    alignment = left
+    vertical_alignment = center
+
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 32
+
+    stack_duplicates = true
+    hide_duplicate_count = false
+
+    show_indicators = true
+
+    mouse_left_click = close_current
+    mouse_middle_click = do_action
+    mouse_right_click = close_all
+
+
+[urgency_low]
+    background = "#F5F7FA"
+    foreground = "#20242A"
+    frame_color = "#4A90E2"
+    timeout = 4
+
+[urgency_normal]
+    background = "#F5F7FA"
+    foreground = "#161A1D"
+    frame_color = "#4A90E2"
+    timeout = 6
+
+[urgency_critical]
+    background = "#FFFFFF"
+    foreground = "#111418"
+    frame_color = "#2563EB"
+    timeout = 0
+
+
+# Optional custom rules
+
+[volume]
+    appname = "volume"
+    background = "#F5F7FA"
+    foreground = "#161A1D"
+    frame_color = "#4A90E2"
+
+[network]
+    appname = "network"
+    background = "#F5F7FA"
+    foreground = "#161A1D"
+    frame_color = "#4A90E2"
+
