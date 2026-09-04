@@ -1,0 +1,45 @@
+#!/bin/bash
+
+options="⏻  Shutdown
+↻  Reboot
+⇥  Logout
+  Lock
+×  Cancel"
+
+chosen=$(printf "%s\n" "$options" | rofi -dmenu \
+    -i \
+    -p "Power" \
+    -theme-str '
+        window {
+            width: 350px;
+            border: 2px;
+            border-radius: 12px;
+        }
+
+        listview {
+            lines: 5;
+        }
+
+        element {
+            padding: 12px;
+        }
+
+        element selected {
+            border-radius: 8px;
+        }
+    ')
+
+case "$chosen" in
+    "⏻  Shutdown")
+        systemctl poweroff
+        ;;
+    "↻  Reboot")
+        systemctl reboot
+        ;;
+    "⇥  Logout")
+        i3-msg exit
+        ;;
+    "  Lock")
+        i3lock
+        ;;
+esac

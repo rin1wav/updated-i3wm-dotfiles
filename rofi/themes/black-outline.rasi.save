@@ -1,0 +1,88 @@
+* { bg: #262626; bg-alt: #32302f; fg: #ebdbb2; fg-alt: #d5c4a1; accent: 
+    #ebdbb2;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    width: 650px;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 14px;
+    background-color: @bg;
+}
+mainbox {
+    spacing: 10px;
+    padding: 12px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius: 10px;
+    padding: 10px;
+    spacing: 8px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    text-color: @fg;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    spacing: 6px;
+    scrollbar: false;
+}
+
+element {
+    orientation: horizontal;
+    children: [ element-icon, element-text ];
+
+    spacing: 4px;
+    padding: 8px;
+
+    border: 1px;
+    border-radius: 8px;
+    border-color: transparent;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: @accent;
+    text-color: @bg;
+
+    border: 2px;
+    border-color: @accent;
+}
+element-icon {
+    size: 22px;
+    background-color: transparent;
+}
+
+element-text {
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+scrollbar {
+    handle-width: 0px;
+    border: 0;
+}
+
+message {
+    padding: 8px;
+}
+
+textbox {
+    text-color: @fg;
+}
